@@ -3,6 +3,8 @@ import { ref } from "vue";
 
 import type { SolicitacaoAutorizacao, ResultadoAuditoria } from "../../types/autorizacaoGuia";
 
+const proximoId = ref(1);
+
 const validarProcedimento1234 = (idade: number, sexo: "M" | "F"): ResultadoAuditoria => {
   if (idade === 20 && sexo === "M") {
     return { status: "Autorizado", justificativa: "Procedimento autorizado com sucesso." };
@@ -52,7 +54,7 @@ export const useAutorizacaoGuiaStore = defineStore("autorizacaoGuia", () => {
     }
 
     const novaSolicitacao: SolicitacaoAutorizacao = {
-      id: Date.now(),
+      id: proximoId.value++,
       procedimento: procLimpo,
       idade,
       sexo,
