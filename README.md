@@ -6,7 +6,7 @@ Esta aplicação reproduz o fluxo de validação de autorizações de procedimen
 
 ---
 
-##  Sobre esta versão
+##  ▶ Sobre esta versão
 
 O desafio técnico original foi solicitado em Java Web, utilizando Servlets, JSP, JDBC, H2, Liquibase e Maven.
 
@@ -19,14 +19,14 @@ Como a descrição da vaga também mencionava conhecimentos em Vue.js, esta vers
 
 ---
 
-## Demonstração Online
+## ▶ Demonstração Online
 
 A aplicação está publicada na Vercel e para acessar
 [clique aqui](https://desafio-nexdom-versao-vue-clarissa.vercel.app/)
 
 ---
 
-## Funcionalidades
+## ▶ Funcionalidades
 
 A aplicação permite:
 
@@ -43,7 +43,7 @@ A aplicação permite:
 
 ---
 
-## Cenários de Teste Disponíveis
+## ▶ Cenários de Teste Disponíveis
 
 Para facilitar a validação manual da aplicação, utilize os cenários abaixo:
 
@@ -57,7 +57,7 @@ Para facilitar a validação manual da aplicação, utilize os cenários abaixo:
 
 ---
 
-## Tecnologias Utilizadas
+## ▶ Tecnologias Utilizadas
 
 - **Vue.js 3**
 - **TypeScript**
@@ -68,7 +68,7 @@ Para facilitar a validação manual da aplicação, utilize os cenários abaixo:
 - **Vite**
 - **Vercel**
 
-## Como Executar Localmente
+## ▶ Como Executar Localmente
 ### Pré-requisitos
 
 Antes de executar o projeto, é necessário ter instalado:
@@ -107,7 +107,7 @@ http://localhost:3000/
 
 Caso a porta 3000 esteja em uso, verifique a porta indicada pelo Nuxt no terminal.
 
-## Observação Final
+##  ▶ Observação Final
 
 Esta versão foi desenvolvida como complemento ao desafio técnico original, com o objetivo de demonstrar também conhecimentos em desenvolvimento frontend moderno.
 
