@@ -1,75 +1,118 @@
-# Nuxt Minimal Starter
+# Desafio Técnico Nexdom - Versão Vue.js
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Versão alternativa do desafio técnico da Nexdom, desenvolvida como bônus utilizando **Vue.js 3**, **TypeScript**, **Pinia** e **Tailwind CSS**.
 
-## Setup
+Esta aplicação reproduz o fluxo de validação de autorizações de procedimentos médicos, com foco em experiência de usuário, interface responsiva e organização moderna de frontend.
 
-Make sure to install dependencies:
+---
+
+## 🎁 Sobre esta versão
+
+O desafio técnico original foi solicitado em Java Web, utilizando Servlets, JSP, JDBC, H2, Liquibase e Maven.
+
+**🔗 Repositório Principal (Java):** [Clique aqui para acessar o repositório com o desafio oficial](https://github.com/ClariCassia/desafio-tecnico-nexdom)
+
+Como a descrição da vaga também mencionava conhecimentos em Vue.js, esta versão foi desenvolvida como complemento ao projeto principal, com o objetivo de demonstrar domínio em frontend moderno, componentização, gerenciamento de estado e construção de interfaces reativas.
+
+> Esta versão Vue.js é uma entrega bônus e não substitui a implementação principal em Java.
+
+
+---
+
+## 🚀 Demonstração Online
+
+A aplicação está publicada na Vercel e para acessar
+[clique aqui](https://desafio-nexdom-versao-vue-clarissa.vercel.app/)
+
+---
+
+## 📌 Funcionalidades
+
+A aplicação permite:
+
+- Realizar solicitação de autorização de procedimento médico.
+- Validar automaticamente se o procedimento é autorizado ou não.
+- Aplicar regras de elegibilidade com base em:
+  - Código do procedimento;
+  - Idade do paciente;
+  - Sexo do paciente.
+- Exibir o parecer da autorização.
+- Apresentar justificativa administrativa para solicitações não autorizadas.
+- Consultar o histórico de solicitações realizadas.
+- Utilizar uma interface responsiva para desktop e mobile.
+
+---
+
+## 🧪 Cenários de Teste Disponíveis
+
+Para facilitar a validação manual da aplicação, utilize os cenários abaixo:
+
+| Procedimento | Idade | Sexo |  Status Esperado  | Justificativa                                     |
+| ------------ | ----: | :--: | :---------------: | ------------------------------------------------- |
+| **1234**     |    20 |  M   |   ✅ Autorizado   | Procedimento autorizado com sucesso.              |
+| **4567**     |    20 |  M   |   ✅ Autorizado   | Procedimento autorizado com sucesso.              |
+| **4567**     |    30 |  F   |   ✅ Autorizado   | Procedimento autorizado com sucesso.              |
+| **6789**     |    10 |  M   |   ✅ Autorizado   | Procedimento autorizado com sucesso.              |
+| **6789**     |    10 |  F   | ❌ Não Autorizado | Procedimento não permitido para o sexo informado. |
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- **Vue.js 3**
+- **TypeScript**
+- **Composition API**
+- **Pinia**
+- **Vue Router**
+- **Tailwind CSS**
+- **Vite**
+- **Vercel**
+
+## ⚙️ Como Executar Localmente
+### Pré-requisitos
+
+Antes de executar o projeto, é necessário ter instalado:
+
+ - Node.js
+ - npm
+
+### 1. Clonar o repositório
 
 ```bash
-# npm
+git clone https://github.com/ClariCassia/Desafio-Nexdom-Versao-Vue.git
+cd Desafio-Nexdom-Versao-Vue
+```
+
+### 2. Instalar as dependências
+
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+### 3. Executar o projeto
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+### 4. Acessar a aplicação
 
-Build the application for production:
+Após executar o projeto, o Nuxt exibirá no terminal a URL local da aplicação.
+
+Normalmente, a aplicação ficará disponível em:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+http://localhost:3000/
 ```
 
-Locally preview production build:
+Caso a porta 3000 esteja em uso, verifique a porta indicada pelo Nuxt no terminal.
 
-```bash
-# npm
-npm run preview
+🏁 Observação Final
 
-# pnpm
-pnpm preview
+Esta versão foi desenvolvida como complemento ao desafio técnico original, com o objetivo de demonstrar também conhecimentos em desenvolvimento frontend moderno.
 
-# yarn
-yarn preview
+A aplicação principal em Java atende aos requisitos obrigatórios do desafio, enquanto esta versão Vue.js apresenta uma alternativa mais moderna para a camada de interface e experiência do usuário.
 
-# bun
-bun run preview
-```
+👩‍💻 Autora
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Desenvolvido por Clarissa de Cássia Gama Lacerda.
