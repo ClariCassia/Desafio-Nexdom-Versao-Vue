@@ -107,12 +107,12 @@ http://localhost:3000/
 
 Caso a porta 3000 esteja em uso, verifique a porta indicada pelo Nuxt no terminal.
 
-🏁 Observação Final
+## 🏁 Observação Final
 
 Esta versão foi desenvolvida como complemento ao desafio técnico original, com o objetivo de demonstrar também conhecimentos em desenvolvimento frontend moderno.
 
 A aplicação principal em Java atende aos requisitos obrigatórios do desafio, enquanto esta versão Vue.js apresenta uma alternativa mais moderna para a camada de interface e experiência do usuário.
 
-👩‍💻 Autora
+## 👩‍💻 Autora
 
 Desenvolvido por Clarissa de Cássia Gama Lacerda.
