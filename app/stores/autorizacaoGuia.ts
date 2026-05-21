@@ -37,7 +37,6 @@ export const useAutorizacaoGuiaStore = defineStore("autorizacaoGuia", () => {
     const procLimpo = procedimento.trim();
     let resultado: ResultadoAuditoria;
 
-    // O Switch serve apenas como um roteador limpo para direcionar o fluxo
     switch (procLimpo) {
       case "1234":
         resultado = validarProcedimento1234(idade, sexo);
