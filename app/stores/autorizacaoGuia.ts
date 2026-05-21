@@ -1,0 +1,73 @@
+import { defineStore } from "pinia";
+import { ref } from "vue";
+
+import type { SolicitacaoAutorizacao, ResultadoAuditoria } from "../../types/autorizacaoGuia";
+
+const validarProcedimento1234 = (idade: number, sexo: "M" | "F"): ResultadoAuditoria => {
+  if (idade === 20 && sexo === "M") {
+    return { status: "Autorizado", justificativa: "Procedimento autorizado com sucesso." };
+  }
+  return { status: "Não Autorizado", justificativa: "Idade ou sexo não elegíveis para este procedimento." };
+};
+
+const validarProcedimento4567 = (idade: number, sexo: "M" | "F"): ResultadoAuditoria => {
+  const ehHomemElegivel = idade === 20 && sexo === "M";
+  const ehMulherElegivel = idade === 30 && sexo === "F";
+
+  if (ehHomemElegivel || ehMulherElegivel) {
+    return { status: "Autorizado", justificativa: "Procedimento autorizado com sucesso." };
+  }
+  return { status: "Não Autorizado", justificativa: "Combinação de idade e sexo não atende aos critérios de elegibilidade." };
+};
+
+const validarProcedimento6789 = (idade: number, sexo: "M" | "F"): ResultadoAuditoria => {
+  if (idade === 10 && sexo === "M") {
+    return { status: "Autorizado", justificativa: "Procedimento autorizado com sucesso." };
+  }
+  if (idade === 10 && sexo === "F") {
+    return { status: "Não Autorizado", justificativa: "Procedimento não permitido para o sexo informado." };
+  }
+  return { status: "Não Autorizado", justificativa: "Idade não permitida para este procedimento." };
+};
+
+export const useAutorizacaoGuiaStore = defineStore("autorizacaoGuia", () => {
+  const historicoSolicitacoes = ref<SolicitacaoAutorizacao[]>([]);
+
+  const processarAutorizacao = (procedimento: string, idade: number, sexo: "M" | "F") => {
+    const procLimpo = procedimento.trim();
+    let resultado: ResultadoAuditoria;
+
+    // O Switch serve apenas como um roteador limpo para direcionar o fluxo
+    switch (procLimpo) {
+      case "1234":
+        resultado = validarProcedimento1234(idade, sexo);
+        break;
+      case "4567":
+        resultado = validarProcedimento4567(idade, sexo);
+        break;
+      case "6789":
+        resultado = validarProcedimento6789(idade, sexo);
+        break;
+      default:
+        resultado = { status: "Não Autorizado", justificativa: "Procedimento não encontrado na base de regras." };
+    }
+
+    const novaSolicitacao: SolicitacaoAutorizacao = {
+      id: Date.now(),
+      procedimento: procLimpo,
+      idade,
+      sexo,
+      status: resultado.status,
+      justificativa: resultado.justificativa,
+      dataHora: new Date().toLocaleString("pt-BR"),
+    };
+
+    historicoSolicitacoes.value.unshift(novaSolicitacao);
+    return novaSolicitacao;
+  };
+
+  return {
+    historicoSolicitacoes,
+    processarAutorizacao,
+  };
+});
