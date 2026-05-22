@@ -12,7 +12,7 @@ O desafio técnico original foi solicitado em Java Web, utilizando Servlets, JSP
 
 **🔗 Repositório Principal (Java):** [Clique aqui para acessar o repositório com o desafio oficial](https://github.com/ClariCassia/desafio-tecnico-nexdom)
 
-Como a descrição da vaga também mencionava conhecimentos em Vue.js, esta versão foi desenvolvida como complemento ao projeto principal, com o objetivo de demonstrar domínio em frontend moderno, componentização, gerenciamento de estado e construção de interfaces reativas.
+Como a descrição da vaga também mencionava conhecimentos em Vue.js, esta versão foi desenvolvida como complemento ao projeto principal, com o objetivo de demonstrar domínio em frontend moderno, estruturação de layouts globais, componentização para reaproveitamento de código, gerenciamento de estado e construção de interfaces reativas
 
 > Esta versão Vue.js é uma entrega bônus e não substitui a implementação principal em Java.
 
@@ -39,6 +39,7 @@ A aplicação permite:
 - Exibir o parecer da autorização.
 - Apresentar justificativa administrativa para solicitações não autorizadas.
 - Consultar o histórico de solicitações realizadas.
+- Persistir dados localmente (`localStorage`), garantindo que o histórico de auditoria não seja perdido ao recarregar a página.
 - Utilizar uma interface responsiva para desktop e mobile.
 
 ---
@@ -59,14 +60,12 @@ Para facilitar a validação manual da aplicação, utilize os cenários abaixo:
 
 ## ▶ Tecnologias Utilizadas
 
-- **Vue.js 3**
+- **Nuxt 3** (Framework)
+- **Vue.js 3** (Composition API)
 - **TypeScript**
-- **Composition API**
-- **Pinia**
-- **Vue Router**
-- **Tailwind CSS**
-- **Vite**
-- **Vercel**
+- **Pinia** (Gerenciamento de Estado)
+- **Tailwind CSS** (Estilização Utilitária Responsiva)
+- **Vercel** (Deploy)
 
 ## ▶ Como Executar Localmente
 ### Pré-requisitos
