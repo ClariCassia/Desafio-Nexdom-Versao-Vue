@@ -94,11 +94,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useAutorizacaoGuiaStore } from '../stores/autorizacaoGuia'
 
 const store = useAutorizacaoGuiaStore()
+
 const atualizando = ref(false)
+
+const listagemLocal = ref<any[]>([])
 
 const formatarSexo = (sexo: 'M' | 'F'): string => {
   return sexo === 'M' ? 'Masculino' : 'Feminino'
@@ -110,10 +113,24 @@ const obterClassesCaixa = (status: string): string => {
     : 'bg-rose-50/50 text-rose-800 border-rose-100'
 }
 
+
 const handleAtualizar = () => {
   atualizando.value = true
+
+  listagemLocal.value = []
+
   setTimeout(() => {
+    listagemLocal.value = [...store.historicoSolicitacoes]
     atualizando.value = false
-  }, 300)
+  }, 400)
 }
+
+onMounted(() => {
+  listagemLocal.value = [...store.historicoSolicitacoes]
+})
+
+watch(() => store.historicoSolicitacoes, (novaLista) => {
+    listagemLocal.value = [...novaLista]
+}, { deep: true })
+
 </script>
