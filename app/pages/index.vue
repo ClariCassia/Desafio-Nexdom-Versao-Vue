@@ -1,5 +1,4 @@
 <template>    
-
     <main class="flex-grow max-w-3xl mx-auto w-full px-4 sm:px-6 py-12">
 
       <div class="mb-10 text-center md:text-left">
@@ -122,14 +121,9 @@
           ]"
         >
           <span class="font-bold tracking-wider uppercase text-[10px] sm:text-xs">Parecer de Auditoria Técnica</span>
-          <span 
-            :class="[
-              'px-2.5 py-1 bg-white font-black text-[9px] sm:text-xs rounded-full shadow-sm',
-              resultado.status === 'Autorizado' ? 'text-emerald-700' : 'text-rose-700'
-            ]"
-          >
-            {{ resultado.status.toUpperCase() }}
-          </span>
+          
+          <BadgeStatus :status="resultado.status" />
+
         </div>
 
         <div class="p-5 sm:p-6 space-y-5">
@@ -171,7 +165,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useAutorizacaoGuiaStore } from '../stores/autorizacaoGuia'
-import type { SolicitacaoAutorizacao } from "../../types/autorizacaoGuia";
+import type { SolicitacaoAutorizacao } from "../../types/autorizacaoGuia"
 
 const store = useAutorizacaoGuiaStore()
 
